@@ -20,8 +20,8 @@ class CategoryChip extends StatelessWidget {
         onPressed();
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-        margin: EdgeInsets.only(left: 12, top: 4, bottom: 4),
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        margin: EdgeInsets.only(left: 12, top: 9, bottom: 9),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: selected ? Colors.black : Colors.transparent,

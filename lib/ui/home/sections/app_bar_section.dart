@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:talent_clothing/core/constants/app_colors.dart';
 import 'package:talent_clothing/ui/home/widgets/category_chip.dart';
 
 class AppBarSection extends StatefulWidget {
@@ -23,7 +24,7 @@ class _AppBarSectionState extends State<AppBarSection> {
       collapsedHeight: 100,
       expandedHeight: 150,
       elevation: 0,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       pinned: true,
       stretch: true,
       flexibleSpace: SafeArea(
@@ -32,23 +33,26 @@ class _AppBarSectionState extends State<AppBarSection> {
           children: [
             Container(
               width: size.width,
-              height: 50,
+              height: 40,
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 children: [
                   SvgPicture.asset(
                     'assets/images/home_menu.svg',
                     width: 24,
+                    color: AppColors.darkGrey,
                   ),
                   Spacer(),
                   SvgPicture.asset(
                     'assets/images/home_search.svg',
                     width: 24,
+                    color: AppColors.darkGrey,
                   ),
                   SizedBox(width: 24),
                   SvgPicture.asset(
                     'assets/images/home_cart.svg',
                     width: 24,
+                    color: AppColors.darkGrey,
                   ),
                 ],
               ),
@@ -77,7 +81,7 @@ class _AppBarSectionState extends State<AppBarSection> {
                 : SizedBox(),
             Container(
               width: size.width,
-              height: 50,
+              height: 60,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
