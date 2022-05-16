@@ -20,6 +20,7 @@ dependencies:
   file_picker: ^4.5.1
   permission_handler: ^9.2.0
   path_provider: ^2.0.10
+  flutter_svg: ^1.0.3
 
 
 dev_dependencies:
@@ -39,3 +40,11 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Merienda
+      fonts:
+        - asset: assets/fonts/Merienda/Merienda-Regular.ttf
+        - asset: assets/fonts/Merienda/Merienda-Bold.ttf
+          weight: 600

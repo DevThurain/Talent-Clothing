@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talent_clothing/ui/home/sections/app_bar_section.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/home_screen';
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     scrollController.addListener(() {
-      print('opacity ' + (scrollController.offset * 0.1).toString());
+      // print('opacity ' + ((50 - scrollController.offset)/50).toString());
 
       if (scrollController.offset < 50.0) {
         setState(() {
@@ -33,48 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: CustomScrollView(
         controller: scrollController,
         slivers: [
-          SliverAppBar(
-            collapsedHeight: 100,
-            expandedHeight: 150,
-            pinned: true,
-            stretch: true,
-            flexibleSpace: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 100,
-                    height: 50,
-                    color: Colors.red,
-                  ),
-                  enoughSpace
-                      ? Opacity(
-                          opacity: scrollController.hasClients ? 1.0 : 1.0,
-                          child: Container(
-                            width: 100,
-                            height: scrollController.hasClients ? 50 - scrollController.offset : 50,
-                            color: Colors.green,
-                          ),
-                        )
-                      : SizedBox(),
-                  Container(
-                    width: 100,
-                    height: 50,
-                    color: Colors.purple,
-                  )
-                ],
-              ),
-            ),
-            stretchTriggerOffset: 150,
-            onStretchTrigger: () async {
-              setState(() {
-                enoughSpace = true;
-              });
-            },
-          ),
+          AppBarSection(enoughSpace: enoughSpace, scrollController: scrollController),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 1000,
