@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
                     return HomeScreen();
 
                   default:
-                    return HomeScreen();
+                    return AddDataScreen();
                 }
               },
             );

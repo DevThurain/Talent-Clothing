@@ -141,9 +141,9 @@ class _AddDataScreenState extends State<AddDataScreen> {
 
   Future<Directory> _getDirectory() async {
     const String pathExt = '/UserData/';
-    var external = await getExternalStorageDirectory(); //This is the name of the folder where the backup is stored
+    var external = await getTemporaryDirectory(); //This is the name of the folder where the backup is stored
     Directory newDirectory =
-        Directory(external!.path + pathExt); //Change this to any desired location where the folder will be created
+        Directory('/storage/emulated/0' + pathExt); //Change this to any desired location where the folder will be created
 
     print(newDirectory.path);
     if (await newDirectory.exists() == false) {
